@@ -190,15 +190,15 @@ function install_continue {
 function install_continue2 {
 cd /bin || exit
 rm pweb > /dev/null 2>&1
-wget  https://github.com/SrCarrara/pweb/raw/painel/install/pweb > /dev/null 2>&1
+wget  https://github.com/FastInternetVpn/pweb/raw/painel/install/pweb > /dev/null 2>&1
 chmod 777 pweb > /dev/null 2>&1
 clear
 [[ ! -d /bin/ppweb ]] && mkdir /bin/ppweb
 cd /bin/ppweb || exit
 rm *.sh ver* > /dev/null 2>&1
-wget  https://github.com/SrCarrara/pweb/raw/painel/install/verifatt.sh > /dev/null 2>&1
-wget  https://github.com/SrCarrara/pweb/raw/painel/install/verpweb > /dev/null 2>&1
-wget  https://github.com/SrCarrara/pweb/raw/painel/install/verweb > /dev/null 2>&1
+wget  https://github.com/FastInternetVpn/pweb/raw/painel/install/verifatt.sh > /dev/null 2>&1
+wget  https://github.com/FastInternetVpn/pweb/raw/painel/install/verpweb > /dev/null 2>&1
+wget  https://github.com/FastInternetVpn/pweb/raw/painel/install/verweb > /dev/null 2>&1
 verp=$(sed -n '1 p' /bin/ppweb/verpweb| sed -e 's/[^0-9]//ig') &>/dev/null
 verw=$(sed -n '1 p' /bin/ppweb/verweb| sed -e 's/[^0-9]//ig') &>/dev/null
 echo -e "$verp" >/bin/ppweb/attpweb
@@ -246,7 +246,7 @@ curl -sS getcomposer.org/installer | php > /dev/null 2>&1
 mv composer.phar /usr/local/bin/composer > /dev/null 2>&1
 chmod +x /usr/local/bin/composer > /dev/null 2>&1
 cd /var/www/html || exit
-wget  https://github.com/SrCarrara/pweb/raw/painel/install/gestorssh.zip > /dev/null 2>&1
+wget  https://github.com/FastInternetVpn/pweb/raw/painel/install/gestorssh.zip > /dev/null 2>&1
 apt-get install unzip > /dev/null 2>&1
 unzip gestorssh.zip > /dev/null 2>&1
 (echo yes; echo yes; echo yes; echo yes) | composer install > /dev/null 2>&1
@@ -336,7 +336,7 @@ echo ""
 echo -e "Painel FAST INTERNET VPN" | figlet
 echo -e "                              \033[1;31mBy @fastinternetvpn\033[1;36m"
 echo ""
-chave=$(curl -sSL "raw.githubusercontent.com/SrCarrara/pweb/painel/install/chave") &>/dev/null
+chave=$(curl -sSL "raw.githubusercontent.com/FastInternetVpn/pweb/painel/install/chave") &>/dev/null
 
 read -p "DIGITE A CHAVE DE INSTALAÇÃO: " key
     
